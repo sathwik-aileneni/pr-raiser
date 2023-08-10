@@ -6,3 +6,8 @@
 chrome.runtime.onInstalled.addListener(function() {
   console.log('The extension has been installed');
 });
+
+// This event is fired when the browser action is clicked.
+chrome.browserAction.onClicked.addListener(function(tab) {
+  console.log('The browser action has been clicked');
+});
