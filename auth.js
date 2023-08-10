@@ -3,8 +3,8 @@ const authEndpoint = 'https://github.com/login/oauth/authorize';
 const tokenEndpoint = 'https://github.com/login/oauth/access_token';
 
 // Define the client ID and redirect URI
-const clientId = 'your-client-id';
-const redirectUri = 'your-redirect-uri';
+const clientId = 'actual-client-id';
+const redirectUri = 'actual-redirect-uri';
 
 // Start the OAuth process
 function startAuth() {
