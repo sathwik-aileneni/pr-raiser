@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "My Chrome Extension",
+  "description": "This is my Chrome extension.",
+  "version": "1.0",
+  "permissions": [],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
