@@ -1,2 +1,4 @@
 // background.js
-// This file is intentionally left blank.
+chrome.runtime.onInstalled.addListener(function() {
+    console.log('The extension has been installed');
+});
