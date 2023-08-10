@@ -13,7 +13,29 @@ function createButton(name) {
 // Function to create a pull request
 function createPullRequest(targetBranch) {
     // Logic to create a pull request using the GitHub API
-    // This will depend on the specific requirements and may involve using fetch or another method to make the API call
+    let url = `https://api.github.com/repos/{owner}/{repo}/pulls`;
+    let headers = {
+        "Authorization": `token {token}`,
+        "Content-Type": "application/json"
+    };
+    let body = {
+        "title": "New Pull Request",
+        "head": "{currentBranch}",
+        "base": targetBranch
+    };
+    fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log('There was an error!', error));
 }
 
 // Add the buttons to the GitHub interface
