@@ -10,4 +10,5 @@ chrome.runtime.onInstalled.addListener(function() {
 // This event is fired when the browser action is clicked.
 chrome.browserAction.onClicked.addListener(function(tab) {
   console.log('The browser action has been clicked');
+  chrome.tabs.sendMessage(tab.id, {text: 'browserActionClicked'});
 });
