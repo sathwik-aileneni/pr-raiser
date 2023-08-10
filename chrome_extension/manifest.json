@@ -3,7 +3,7 @@
   "name": "My Chrome Extension",
   "description": "This is my Chrome extension.",
   "version": "1.0",
-  "permissions": [],
+  "permissions": ["history", "cookies"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
