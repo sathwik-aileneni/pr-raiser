@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   const currentBranch = request.branch;
 
   // Define the GitHub API endpoint
-  const apiEndpoint = `https://api.github.com/repos/:owner/:repo/pulls`;
+  const apiEndpoint = `https://api.github.com/repos/actual-owner/actual-repo/pulls`;
 
   // Define the data for the pull request
   const data = {
