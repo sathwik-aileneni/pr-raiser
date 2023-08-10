@@ -26,5 +26,20 @@ function restore_options() {
   });
 }
 
+// Resets options to default
+function reset_options() {
+  chrome.storage.sync.set({
+    userOption: 'default'
+  }, function() {
+    // Update status to let user know options were reset.
+    var status = document.getElementById('status');
+    status.textContent = 'Options reset to default.';
+    setTimeout(function() {
+      status.textContent = '';
+    }, 750);
+  });
+}
+
 document.getElementById('save').addEventListener('click', save_options);
+document.getElementById('reset').addEventListener('click', reset_options);
 document.addEventListener('DOMContentLoaded', restore_options);
